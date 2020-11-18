@@ -1,26 +1,22 @@
-import 'package:appro/InputWrapper.dart';
+import 'file:///C:/Users/User/Desktop/Flutter_app_client_side/lib/LoginScreen/Component/InputWrapper.dart';
 import 'package:flutter/material.dart';
 
-import 'Header.dart';
+import 'Component/Header.dart';
 
 class LoginPage extends StatelessWidget{
 
-
-
-
   @override
   Widget build(BuildContext context) {
-
 
     return Scaffold(
         body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(begin:Alignment.topCenter, colors: [
-            Colors.cyan[500],
-            Colors.cyan[400],
-            Colors.cyan[300],
-              ])
+          Colors.cyan[500],
+          Colors.cyan[400],
+          Colors.cyan[300],
+        ])
         ),
         child: Column(
           children: <Widget>[

@@ -1,3 +1,5 @@
+import 'package:appro/Pages/Register/Register.dart';
+import 'package:appro/Routing_Handler/Routing_Handler.dart';
 import 'package:flutter/material.dart';
 
 import 'Pages/LoginScreen/LoginPage.dart';
@@ -11,7 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      initialRoute: '/' ,
+      onGenerateRoute: RouteHandler.generateRoute,
     );
   }
 }

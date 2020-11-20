@@ -1,4 +1,4 @@
-import 'file:///C:/Users/User/Desktop/Flutter_app_client_side/lib/LoginScreen/Component/InputWrapper.dart';
+import 'Component/InputWrapper.dart';
 import 'package:flutter/material.dart';
 
 import 'Component/Header.dart';

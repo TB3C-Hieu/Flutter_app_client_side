@@ -1,6 +1,4 @@
-import 'package:appro/Pages/Register/Register.dart';
 import 'package:flutter/material.dart';
-import 'package:appro/Routing_Handler/Routing_Handler.dart';
 class Button extends StatelessWidget{
 
   @override

@@ -2,10 +2,7 @@ import 'package:appro/Pages/LoginScreen/LoginPage.dart';
 import 'package:appro/Pages/Register/Register.dart';
 import 'package:flutter/material.dart';
 
-import 'package:appro/main.dart';
-
 class RouteHandler {
-
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -20,6 +17,7 @@ class RouteHandler {
           return _errorRoute();
       }
     }
+
   static Route<dynamic> _errorRoute(){
     return MaterialPageRoute(builder: (_){
      return Scaffold(

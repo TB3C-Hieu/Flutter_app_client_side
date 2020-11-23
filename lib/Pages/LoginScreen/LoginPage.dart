@@ -14,8 +14,8 @@ class LoginPage extends StatelessWidget{
         decoration: BoxDecoration(
           gradient: LinearGradient(begin:Alignment.topCenter, colors: [
           Colors.cyan[500],
-          Colors.cyan[400],
           Colors.cyan[300],
+          Colors.cyan[400],
         ])
         ),
         child: Column(

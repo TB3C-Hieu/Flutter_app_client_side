@@ -1,4 +1,5 @@
 import 'package:appro/Pages/LoginScreen/LoginPage.dart';
+import 'package:appro/Pages/PartScreen/DestinationScreen.dart';
 import 'package:appro/Pages/Register/Register.dart';
 import 'package:flutter/material.dart';
 import 'package:appro/Pages/HomeScreen/HomeScreen.dart';
@@ -13,6 +14,8 @@ class RouteHandler {
           return MaterialPageRoute(builder: (_) => Register());
         case '/HomeScreen':
           return MaterialPageRoute(builder: (_) => HomeScreen());
+        case '/DestinationScreen':
+          return MaterialPageRoute(builder: (_) => DestinationScreen());
           return _errorRoute();
         default:
           return _errorRoute();

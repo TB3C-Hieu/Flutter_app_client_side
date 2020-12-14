@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
-
-class Button1 extends StatelessWidget{
-
+class LoginButton extends StatelessWidget{
+  bool isButtonPressed = false;
   @override
   Widget build(BuildContext context){
-    return Container(
+    return Row(
+      children: <Widget>[
+      Container(
       height: 50,
-      margin: EdgeInsets.symmetric(horizontal: 50),
       decoration: BoxDecoration(
         color: Colors.cyan[500],
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Center(
+        child: RaisedButton(
+          color: isButtonPressed ? Colors.grey:Colors.cyan[500],
+          onPressed: () {
+            Navigator.pushNamed(context, '/HomeScreen');
+          },
+        child: Center(
         child: Text(
-          "Sign up",
+          "Login",
           style: TextStyle(
             color: Colors.white,
             fontSize:  15,
@@ -21,6 +26,9 @@ class Button1 extends StatelessWidget{
           ),
         ),
       ),
+    )
+      )
+      ]
     );
-  }
+}
 }

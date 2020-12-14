@@ -1,7 +1,7 @@
 import 'package:appro/Pages/LoginScreen/LoginPage.dart';
 import 'package:appro/Pages/Register/Register.dart';
 import 'package:flutter/material.dart';
-
+import 'package:appro/Pages/HomeScreen/HomeScreen.dart';
 class RouteHandler {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -11,7 +11,8 @@ class RouteHandler {
           return MaterialPageRoute(builder: (_) => LoginPage());
         case '/Register':
           return MaterialPageRoute(builder: (_) => Register());
-
+        case '/HomeScreen':
+          return MaterialPageRoute(builder: (_) => HomeScreen());
           return _errorRoute();
         default:
           return _errorRoute();

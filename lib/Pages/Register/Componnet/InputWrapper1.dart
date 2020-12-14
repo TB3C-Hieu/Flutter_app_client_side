@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'Button1.dart';
+import 'SubmitButton.dart';
 import 'InputField1.dart';
 
 class InputWrapper1 extends StatelessWidget{
@@ -19,7 +19,7 @@ class InputWrapper1 extends StatelessWidget{
             child: InputField1(),
             ),
       SizedBox(height: 40),
-          Button1()
+          SubmitButton(),
         ]
       )
     );

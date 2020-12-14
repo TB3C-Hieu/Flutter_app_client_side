@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 
-import 'Button.dart';
+import 'package:flutter/material.dart';
+import 'RegisterButton.dart';
+import 'Login.dart';
 import 'InputField.dart';
 
 class InputWrapper extends StatelessWidget{
@@ -23,7 +24,14 @@ class InputWrapper extends StatelessWidget{
         style: TextStyle(color: Colors.grey),
           ),
           SizedBox(height:40,),
-          Button()
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              LoginButton(),
+              RegisterButton(),
+            ],
+          ),
+
         ]
       )
     );

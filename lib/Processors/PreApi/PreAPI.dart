@@ -9,7 +9,7 @@ class PreAPI
   {
     var request = http.get(URL);
 
-    if(request.)
+    //if(request.)
   }
 }
 

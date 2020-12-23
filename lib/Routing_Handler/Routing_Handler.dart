@@ -1,5 +1,5 @@
 import 'package:appro/Pages/LoginScreen/LoginPage.dart';
-import 'package:appro/Pages/PartScreen/DestinationScreen.dart';
+import 'package:appro/Pages/HomeScreen//PartScreen/DestinationScreen.dart';
 import 'package:appro/Pages/Register/Register.dart';
 import 'package:appro/Pages/HomeScreen/HomeScreen.dart';
 import 'package:appro/Pages/TestCase/TestCase.dart';

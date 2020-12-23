@@ -1,8 +1,9 @@
-import 'package:appro/Pages/HomeScreen/DestinationCarousel.dart';
+import 'file:///F:/pro/appro/lib/Pages/HomeScreen//PartScreen/DestinationCarousel.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import 'HotelCarousel.dart';
+import '../HomeScreen//PartScreen/HotelCarousel.dart';
+import 'Components/appBar.dart';
+import '../HomeScreen/Components/drawer.dart';
 
 class HomeScreen extends StatefulWidget{
   @override
@@ -49,9 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: drawer(context),
+      appBar: appBar(),
       body: SafeArea(
         child: ListView(
-          padding: EdgeInsets.symmetric(vertical: 50),
+          padding: EdgeInsets.symmetric(vertical: 30),
           children: <Widget>[
             Padding(
               padding: EdgeInsets.only(left: 20, right: 120),

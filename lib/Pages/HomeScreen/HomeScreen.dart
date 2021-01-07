@@ -1,4 +1,4 @@
-import 'file:///F:/pro/appro/lib/Pages/HomeScreen//PartScreen/DestinationCarousel.dart';
+import '../HomeScreen/PartScreen//DestinationCarousel.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../HomeScreen//PartScreen/HotelCarousel.dart';

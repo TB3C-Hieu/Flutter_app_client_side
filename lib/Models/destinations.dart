@@ -1,6 +1,7 @@
 import 'active_model.dart';
 
 class Destination {
+  int id ;
   String imageUrl;
   String city;
   String country;
@@ -14,6 +15,7 @@ class Destination {
     this.description,
     this.activities,
   });
+
 }
 
 List<Activity> activities = [

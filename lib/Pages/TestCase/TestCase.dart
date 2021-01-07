@@ -58,7 +58,7 @@ class TestCaseState extends State<TestCase>
     request.headers.set('content-type', 'application/json');*/
 
     var response = await ioClient.get(
-        Uri.encodeFull("https://192.168.0.104:45456/weatherforecast"),
+        Uri.encodeFull("https://192.168.43.162:45455/api/Account/1990"),
         headers:
         {
           "Accept" : "application/json"

@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:appro/Models/TestModel.dart';
+import 'package:appro/Processors/PreApi/PreAPI.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/io_client.dart';
@@ -16,6 +18,14 @@ class TestCase extends StatefulWidget
 
 class TestCaseState extends State<TestCase>
 {
+  PreAPI _helper = PreAPI();
+
+  Future<List<TestModel>> fetchListTestModel() async{
+    final response = await _helper.get("/posts");
+
+    return TestModelList.fromJson(response).result;
+  }
+
   Future<String> getData() async
   {
 /*    HttpClient client = new HttpClient();
@@ -76,7 +86,7 @@ class TestCaseState extends State<TestCase>
       body: new Center(
         child: new RaisedButton(
           child: new Text("Get data"),
-          onPressed: getData,
+          onPressed: fetchListTestModel,
         )
       ),
     );

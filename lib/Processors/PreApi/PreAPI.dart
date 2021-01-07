@@ -9,7 +9,8 @@ import 'package:http/io_client.dart';
 class PreAPI {
   static HttpClient apiClient;
 
-  final String _baseUrl = 'https://localhost:44308/';
+  //final String _baseUrl = 'https://localhost:44308/';
+  final String _baseUrl = 'https://jsonplaceholder.typicode.com';
 
 //call this before calling api
   static void initClient(){
@@ -33,6 +34,7 @@ class PreAPI {
     } on SocketException {
       throw FetchDataException('No Internet connection') ;
     }
+
     return responseJson;
   }
 

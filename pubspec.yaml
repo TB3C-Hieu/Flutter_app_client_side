@@ -30,6 +30,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.0
   font_awesome_flutter: ^8.5.0
+  intl: ^0.16.1
 
 dev_dependencies:
   flutter_test:
@@ -48,8 +49,9 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   # assets:
-assets:
-  - assets/images/hotel.jpg
+  assets:
+  - assets/images/
+  - assets/images/test.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

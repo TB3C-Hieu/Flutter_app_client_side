@@ -1,5 +1,8 @@
+import 'package:appro/Pages/Settings/Setting.dart';
 import 'package:appro/Routing_Handler/Routing_Handler.dart';
 import 'package:flutter/material.dart';
+
+import 'Pages/Settings/edit_profile.dart';
 
 
 void main() {
@@ -19,6 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/HomeScreen' ,
       onGenerateRoute: RouteHandler.generateRoute,
+      /*home: SettingsPage(),*/
     );
   }
 }

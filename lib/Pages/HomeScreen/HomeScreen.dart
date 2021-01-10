@@ -13,10 +13,9 @@ class HomeScreen extends StatefulWidget{
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List<IconData> _icons = [
-    FontAwesomeIcons.car,
-    FontAwesomeIcons.bed,
-    FontAwesomeIcons.walking,
-    FontAwesomeIcons.biking,
+    FontAwesomeIcons.globe,
+    FontAwesomeIcons.search,
+    FontAwesomeIcons.creditCard,
   ];
 
   Widget _buildIcon(int index) {

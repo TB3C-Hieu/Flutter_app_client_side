@@ -64,7 +64,7 @@ class _SettingsPageState extends State<SettingsPage> {
             Row(
               children: [
                 Icon(
-                  Icons.volume_up_outlined,
+                  Icons.volume_up,
                   color: Theme.of(context).primaryColor,
                 ),
                 SizedBox(

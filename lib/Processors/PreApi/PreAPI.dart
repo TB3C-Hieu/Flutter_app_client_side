@@ -10,24 +10,16 @@ class PreAPI {
   static HttpClient apiClient;
 
   //final String _baseUrl = 'https://localhost:44308/';
-  final String _baseUrl = 'https://jsonplaceholder.typicode.com';
+  final String _baseUrl = 'https://tour-manager-sever-side.conveyor.cloud/api';
 
-//call this before calling api
-  static void initClient(){
-    //create new http client
-    apiClient = new HttpClient();
-
-    //allow bad api call (aka: pass through certificate)
-    apiClient.badCertificateCallback = ((X509Certificate cer, String host, int port) => true);
-
-
-    
-  }
 
   Future<dynamic> get(String url) async{
     var responseJson;
 
     try{
+
+      print(_baseUrl + url) ;
+
       final response = await http.get(_baseUrl + url) ;
 
       responseJson = _returnResponse(response) ;
@@ -36,6 +28,19 @@ class PreAPI {
     }
 
     return responseJson;
+  }
+
+  Future<dynamic> post(String url, Map<String, dynamic> json )async {
+
+    print(_baseUrl + url) ;
+
+    Map<String, String> headers = {"Content-type": "application/json"};
+
+    final response = await http.post(_baseUrl + url, headers: headers, body: json);
+
+    int statusCode = response.statusCode;
+
+    // can return the passing body if want to
   }
 
   dynamic _returnResponse(http.Response response){

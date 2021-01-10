@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:appro/Models/Location/Location.dart';
 import 'package:appro/Models/TestModel.dart';
 import 'package:appro/Processors/PreApi/PreAPI.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,10 @@ class TestCaseState extends State<TestCase>
 {
   PreAPI _helper = PreAPI();
 
-  Future<List<TestModel>> fetchListTestModel() async{
-    final response = await _helper.get("/posts");
+  Future<List<Location>> fetchListLocation() async{
+    final response = await _helper.get('/location');
 
-    return TestModelList.fromJson(response).result;
+    return LocationModelList.fromJson(response).result;
   }
 
   Future<String> getData() async
@@ -86,7 +87,7 @@ class TestCaseState extends State<TestCase>
       body: new Center(
         child: new RaisedButton(
           child: new Text("Get data"),
-          onPressed: fetchListTestModel,
+          onPressed: fetchListLocation,
         )
       ),
     );

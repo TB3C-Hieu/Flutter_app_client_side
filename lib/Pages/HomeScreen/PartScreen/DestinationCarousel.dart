@@ -1,5 +1,6 @@
-import 'package:appro/Models/destinations.dart';
+import 'package:appro/Pages/HomeScreen/Widget/DestinationScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:appro/Models/destinations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DestinationC extends StatelessWidget {
@@ -43,9 +44,14 @@ class DestinationC extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               Destination destination = destinations[index];
               return GestureDetector(
-                onTap: () => Navigator.pushNamed(
-                  context,'/DestinationsScreen'
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => DestinationScreen(
+                      destination: destination,
                     ),
+                  ),
+                ),
                 child: Container(
                   margin: EdgeInsets.all(10.0),
                   width: 210.0,
@@ -101,8 +107,8 @@ class DestinationC extends StatelessWidget {
                         child: Stack(
                           children: <Widget>[
                             Hero(
-                              tag: destination.imageUrl,
-                              child: ClipRRect(
+                        tag: destination.imageUrl,
+                            child:  ClipRRect(
                                 borderRadius: BorderRadius.circular(20.0),
                                 child: Image(
                                   height: 180.0,
@@ -146,7 +152,7 @@ class DestinationC extends StatelessWidget {
                                 ],
                               ),
                             ),
-                          ],
+                            ],
                         ),
                       )
                     ],

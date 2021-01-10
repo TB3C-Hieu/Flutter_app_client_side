@@ -48,30 +48,13 @@ Widget drawer(BuildContext context) {
               endIndent: 32,
             ),
             MenuItem(
-              icon: Icons.home,
-              title: "Home",
-             /*onTap: () {
-               onIconPressed() {
-                 Navigator.pushNamed(context, '/HomeScreen');
-               };
-             },*/
-             ),
-            MenuItem(
               icon: Icons.person,
               title: "My Account",
-              /*onTap: () {
-                onIconPressed();
-                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyAccountClickedEvent);
-              },*/
+              onTap: () {
+                Navigator.pushNamed(context, '/ProFilePage');
+              },
             ),
-            MenuItem(
-              icon: Icons.shopping_basket,
-              title: "My Orders",
-              /*onTap: () {
-                onIconPressed();
-                BlocProvider.of<NavigationBloc>(context).add(NavigationEvents.MyOrdersClickedEvent);
-              },*/
-            ),
+
             Divider(
               height: 64,
               thickness: 0.5,
@@ -82,6 +65,9 @@ Widget drawer(BuildContext context) {
             MenuItem(
               icon: Icons.settings,
               title: "Settings",
+              onTap: () {
+                Navigator.pushNamed(context, '/SettingPage');
+              },
             ),
             MenuItem(
               icon: Icons.exit_to_app,

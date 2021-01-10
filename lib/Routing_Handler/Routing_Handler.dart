@@ -1,9 +1,10 @@
 import 'package:appro/Pages/LoginScreen/LoginPage.dart';
-import 'package:appro/Pages/HomeScreen//PartScreen/DestinationScreen.dart';
+import 'package:appro/Pages/HomeScreen/Widget//DestinationScreen.dart';
 import 'package:appro/Pages/Register/Register.dart';
 import 'package:appro/Pages/HomeScreen/HomeScreen.dart';
 import 'package:appro/Pages/TestCase/TestCase.dart';
-
+import 'package:appro/Pages/Settings/edit_profile.dart';
+import 'package:appro/Pages/Settings/Setting.dart';
 import 'package:flutter/material.dart';
 
 
@@ -22,7 +23,12 @@ class RouteHandler {
           return MaterialPageRoute(builder: (_) => DestinationScreen());
         case '/TestCase':
           return MaterialPageRoute(builder: (_) => TestCase());
-        default:
+        case '/ProFilePage':
+          return MaterialPageRoute(builder: (_) => Profile());
+        case '/SettingPage':
+          return MaterialPageRoute(builder: (_) => SettingsPage());
+
+          default:
           return _errorRoute();
       }
     }

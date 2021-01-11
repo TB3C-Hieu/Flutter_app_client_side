@@ -1,7 +1,46 @@
+import 'package:appro/Processors/PreApi/PreAPI.dart';
 import 'package:flutter/material.dart';
 import 'package:appro/Models/hotels.dart';
+import 'dart:developer' as dev;
 
-class HotelC extends StatelessWidget {
+/*class HotelRepo{
+  PreAPI _helper = PreAPI();
+
+  Future<List<Hotel>> fetchHotelList() async{
+    final response = await _helper.get("/hotel");
+
+    return HotelModelList.fromJson(response).hotels;
+  }
+}*/
+
+
+class HotelC extends StatefulWidget {
+  @override
+  _HotelCState createState() => _HotelCState();
+}
+
+
+class _HotelCState extends State<HotelC> {
+
+  Future<List> hotels;
+
+  PreAPI _helper = PreAPI();
+
+  Future<List> fetchListHotel() async{
+
+    final response = await _helper.get('/hotel');
+
+    return     HotelModelList.fromJson(response).hotels ;
+  }
+
+  @override
+  void initState() {
+
+    hotels = fetchListHotel();
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,7 +75,72 @@ class HotelC extends StatelessWidget {
         ),
         Container(
           height: 300.0,
-          child: ListView.builder(
+          child: FutureBuilder<List> (
+            future: hotels,
+            builder: (BuildContext context , AsyncSnapshot<List> snapshot){
+              if(snapshot.hasData){
+                return ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: snapshot.data.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        margin: EdgeInsets.all(10.0),
+                        width: 240.0,
+                        child: Stack(
+                          alignment: Alignment.topCenter,
+                            children: <Widget>[
+                              Positioned(
+                                bottom: 15.0,
+                                child: Container(
+                                  height: 120.0,
+                                  width: 240.0,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsets.all(10.0),
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: <Widget>[
+                                        Text(
+                                          snapshot.data[index].name,
+                                          style: TextStyle(
+                                            fontSize: 22.0,
+                                            fontWeight: FontWeight.w600,
+                                            letterSpacing: 1.2,
+                                          ),
+                                        ),
+                                        SizedBox(height: 2.0),
+                                        Text(
+                                          snapshot.data[index].address,
+                                          style: TextStyle(
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                        SizedBox(height: 2.0),
+                                        Text(
+                                          '\$${ snapshot.data[index].price} / night',
+                                          style: TextStyle(
+                                            fontSize: 18.0,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
+                        ),
+                      );
+                    }
+                );
+              }
+              return Text("Error");
+            },
+    )
+/*          child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: hotels.length,
             itemBuilder: (BuildContext context, int index) {
@@ -115,7 +219,7 @@ class HotelC extends StatelessWidget {
                 ),
               );
             },
-          ),
+          ),*/
         ),
       ],
     );

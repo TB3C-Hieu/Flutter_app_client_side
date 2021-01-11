@@ -81,8 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 20),
             DestinationC(),
-            /*SizedBox(height: 20),
-            HotelC(),*/
+            SizedBox(height: 20),
+            HotelC(),
           ],
         ),
       ),

@@ -21,10 +21,18 @@ class TestCaseState extends State<TestCase>
 {
   PreAPI _helper = PreAPI();
 
+  Location _location = Location(locationId: 3, locationName: 'new zealand', locationInfo: 'what');
+
   Future<List<Location>> fetchListLocation() async{
     final response = await _helper.get('/location');
 
     return LocationModelList.fromJson(response).result;
+  }
+
+  Future<void> postLocation() async{
+    //String json = '{"locationId": 1, "locationName": "new zealand", "locationInfo": "new zealand"}';
+
+    final response = await _helper.post('/location', _location.toString());
   }
 
   Future<String> getData() async
@@ -87,7 +95,7 @@ class TestCaseState extends State<TestCase>
       body: new Center(
         child: new RaisedButton(
           child: new Text("Get data"),
-          onPressed: fetchListLocation,
+          onPressed: postLocation,
         )
       ),
     );

@@ -9,14 +9,19 @@ class Location{
     locationInfo  = json['locationInfo'];
   }
 
-  Map<String, dynamic> toJson() {
-    Map<String, dynamic> json;
-    json['locationId']  = locationId;
-    json['locationName']  = locationName;
-    json['locationInfo']  = locationInfo;
+  String toString() {
+    String _string;
 
-    return json;
+    _string = '{"locationId": $locationId, "locationName": "$locationName", "locationInfo": "$locationInfo"}';
+
+    return _string ;
   }
+
+  Location({
+    this.locationId,
+    this.locationName,
+    this.locationInfo,
+  });
 }
 
 class LocationModelList {

@@ -30,7 +30,7 @@ class PreAPI {
     return responseJson;
   }
 
-  Future<dynamic> post(String url, Map<String, dynamic> json )async {
+  Future<dynamic> post(String url, String json )async {
 
     print(_baseUrl + url) ;
 
@@ -41,6 +41,25 @@ class PreAPI {
     int statusCode = response.statusCode;
 
     // can return the passing body if want to
+  }
+
+  Future<dynamic> put(String url, String json) async {
+    print(_baseUrl + url) ;
+
+    Map<String, String> headers = {"Content-type": "application/json"};
+
+    final response = await http.put(_baseUrl + url , headers: headers, body: json);
+
+  }
+
+  Future<dynamic> delete(String url) async{
+    print(_baseUrl + url) ;
+
+    Map<String, String> headers = {"Content-type": "application/json"};
+
+    final response = await http.delete(_baseUrl + url,headers: headers );
+
+    return response.statusCode;
   }
 
   dynamic _returnResponse(http.Response response){

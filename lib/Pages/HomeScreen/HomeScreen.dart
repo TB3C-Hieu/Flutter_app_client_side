@@ -13,7 +13,6 @@ class HomeScreen extends StatefulWidget{
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   List<IconData> _icons = [
-    FontAwesomeIcons.globe,
     FontAwesomeIcons.search,
     FontAwesomeIcons.creditCard,
   ];
@@ -82,8 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 20),
             DestinationC(),
-            SizedBox(height: 20),
-            HotelC(),
+            /*SizedBox(height: 20),
+            HotelC(),*/
           ],
         ),
       ),

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xFFD8ECF1),
         scaffoldBackgroundColor: Color(0xFFF3F5F7),
       ),
-      initialRoute: '/TestCase' ,
+      initialRoute: '/HomeScreen' ,
       onGenerateRoute: RouteHandler.generateRoute,
       /*home: SettingsPage(),*/
     );

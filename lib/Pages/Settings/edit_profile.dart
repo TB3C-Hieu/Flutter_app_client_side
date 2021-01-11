@@ -25,7 +25,7 @@ class Profile extends StatelessWidget {
             FocusScope.of(context).unfocus();
           },
           child: ListView(
-            children: [
+            children: <Widget> [
               Text(
                 "Edit Profile",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
@@ -35,7 +35,7 @@ class Profile extends StatelessWidget {
               ),
               Center(
                 child: Stack(
-                  children: [
+                  children: <Widget>[
                     Container(
                       width: 130,
                       height: 130,
@@ -54,7 +54,9 @@ class Profile extends StatelessWidget {
                           image: DecorationImage(
                               fit: BoxFit.contain,
                               image: AssetImage('assets/images/paris.jpg'
-                              ))),
+                              )
+                          )
+                      ),
                     ),
                     Positioned(
                         bottom: 0,

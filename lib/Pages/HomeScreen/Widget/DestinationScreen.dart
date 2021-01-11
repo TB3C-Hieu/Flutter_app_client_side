@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:appro/Models/active_model.dart';
 import 'package:appro/Models/destinations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class DestinationScreen extends StatefulWidget {
   final Destination destination;
@@ -61,7 +63,9 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       icon: Icon(Icons.arrow_back),
                       iconSize: 30.0,
                       color: Colors.black,
-                      onPressed: () => Navigator.pop(context),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
                     ),
                     Row(
                       children: <Widget>[
@@ -136,7 +140,12 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 Activity activity = widget.destination.activities[index];
                 return Stack(
                   children: <Widget>[
-                    Container(
+                    Slidable(
+                      actionPane: SlidableDrawerActionPane(),
+                      actionExtentRatio: 0.25,
+                      child: Stack(
+                      children:<Widget>[
+                        Container(
                       margin: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 5.0),
                       height: 170.0,
                       width: double.infinity,
@@ -144,13 +153,13 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(100.0, 20.0, 20.0, 20.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Row(
+                          child: Padding(
+                          padding: EdgeInsets.fromLTRB(100.0, 20.0, 20.0, 20.0),
+                            child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
@@ -176,7 +185,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                       ),
                                     ),
                                     Text(
-                                      'per pax',
+                                      '/person',
                                       style: TextStyle(
                                         color: Colors.grey,
                                       ),
@@ -185,15 +194,15 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                 ),
                               ],
                             ),
-                            Text(
+                              Text(
                               activity.type,
                               style: TextStyle(
                                 color: Colors.grey,
                               ),
                             ),
-                            _buildRatingStars(activity.rating),
-                            SizedBox(height: 10.0),
-                            Row(
+                              _buildRatingStars(activity.rating),
+                              SizedBox(height: 10.0),
+                              Row(
                               children: <Widget>[
                                 Container(
                                   padding: EdgeInsets.all(5.0),
@@ -226,7 +235,29 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         ),
                       ),
                     ),
-                    Positioned(
+                        /*Container(
+                          alignment: Alignment.bottomLeft,
+                          child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                            child: Image(
+                            width: 110.0,
+                            image: AssetImage(
+                              activity.imageUrl,
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),*/
+                      /*secondaryActions(
+                        IconSlideAction(
+                          caption: 'Edit',
+                          color: Colors.black,
+                          icon: Icons.settings,
+                        ),
+                      )*/
+                      ],
+                          ),
+                   /* Positioned(
                       left: 20.0,
                       top: 15.0,
                       bottom: 15.0,
@@ -240,8 +271,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                    ),
-                  ],
+                    ),*/
+                )],
                 );
               },
             ),

@@ -1,7 +1,6 @@
+import 'package:appro/Models/hotels.dart';
 import 'package:appro/Processors/PreApi/PreAPI.dart';
 import 'package:flutter/material.dart';
-import 'package:appro/Models/hotels.dart';
-import 'dart:developer' as dev;
 
 /*class HotelRepo{
   PreAPI _helper = PreAPI();
@@ -13,29 +12,24 @@ import 'dart:developer' as dev;
   }
 }*/
 
-
 class HotelC extends StatefulWidget {
   @override
   _HotelCState createState() => _HotelCState();
 }
 
-
 class _HotelCState extends State<HotelC> {
-
   Future<List> hotels;
 
   PreAPI _helper = PreAPI();
 
-  Future<List> fetchListHotel() async{
-
+  Future<List> fetchListHotel() async {
     final response = await _helper.get('/hotel');
 
-    return     HotelModelList.fromJson(response).hotels ;
+    return HotelModelList.fromJson(response).hotels;
   }
 
   @override
   void initState() {
-
     hotels = fetchListHotel();
 
     super.initState();
@@ -74,20 +68,20 @@ class _HotelCState extends State<HotelC> {
           ),
         ),
         Container(
-          height: 300.0,
-          child: FutureBuilder<List> (
-            future: hotels,
-            builder: (BuildContext context , AsyncSnapshot<List> snapshot){
-              if(snapshot.hasData){
-                return ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: snapshot.data.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        margin: EdgeInsets.all(10.0),
-                        width: 240.0,
-                        child: Stack(
-                          alignment: Alignment.topCenter,
+            height: 300.0,
+            child: FutureBuilder<List>(
+              future: hotels,
+              builder: (BuildContext context, AsyncSnapshot<List> snapshot) {
+                if (snapshot.hasData) {
+                  return ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: snapshot.data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          margin: EdgeInsets.all(10.0),
+                          width: 240.0,
+                          child: Stack(
+                            alignment: Alignment.topCenter,
                             children: <Widget>[
                               Positioned(
                                 bottom: 15.0,
@@ -120,7 +114,7 @@ class _HotelCState extends State<HotelC> {
                                         ),
                                         SizedBox(height: 2.0),
                                         Text(
-                                          '\$${ snapshot.data[index].price} / night',
+                                          '\$${snapshot.data[index].price} / night',
                                           style: TextStyle(
                                             fontSize: 18.0,
                                             fontWeight: FontWeight.w600,
@@ -130,16 +124,36 @@ class _HotelCState extends State<HotelC> {
                                     ),
                                   ),
                                 ),
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular((20.0)),
+                                    boxShadow: [
+                                      BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0.0, 2.0),
+                                        blurRadius: 6.0,
+                                      )
+                                    ]),
+                                child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                    child: Image(
+                                      height: 180.0,
+                                      width: 220.0,
+                                      image: AssetImage(
+                                          snapshot.data[index].imageUrl),
+                                      fit: BoxFit.cover,
+                                    )),
                               )
                             ],
-                        ),
-                      );
-                    }
-                );
-              }
-              return Text("Error");
-            },
-    )
+                          ),
+                        );
+                      });
+                }
+                return Text("Error");
+              },
+            )
 /*          child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: hotels.length,
@@ -214,13 +228,13 @@ class _HotelCState extends State<HotelC> {
                           fit: BoxFit.cover,
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               );
             },
           ),*/
-        ),
+            ),
       ],
     );
   }

@@ -17,7 +17,7 @@ class Hotel {
   Hotel.fromJson(Map<String, dynamic> json) {
     this.hotelId = json['hotelID'];
     this.name = json['hotelName'];
-    this.address = json['hotelAdress'];
+    this.address = json['hotelAddress'];
     this.price = json['hotelPrice'];
   }
 }

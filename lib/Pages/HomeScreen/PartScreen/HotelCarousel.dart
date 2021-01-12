@@ -142,7 +142,8 @@ class _HotelCState extends State<HotelC> {
                                       height: 180.0,
                                       width: 220.0,
                                       image: AssetImage(
-                                          snapshot.data[index].imageUrl),
+                                          /*snapshot.data[index].imageUrl*/
+                                          'assets/images/test.jpg'),
                                       fit: BoxFit.cover,
                                     )),
                               )

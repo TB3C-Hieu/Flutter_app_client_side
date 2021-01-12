@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class Hotel {
   int hotelId;
   String imageUrl;
@@ -22,7 +20,7 @@ class Hotel {
   }
 }
 
-class HotelModelList{
+class HotelModelList {
   final List<Hotel> hotels;
 
   HotelModelList({this.hotels});
@@ -32,9 +30,8 @@ class HotelModelList{
 
     models = json.map((e) => Hotel.fromJson(e)).toList();
 
-    return new HotelModelList(hotels :models) ;
+    return new HotelModelList(hotels: models);
   }
-
 }
 
 /*final List<Hotel> hotels = [

@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
-
 import 'active_model.dart';
 
 class Destination {
-  int id ;
+  int id;
   String imageUrl;
   String city;
   String country;
@@ -17,7 +15,6 @@ class Destination {
     this.description,
     this.activities,
   });
-
 }
 
 List<Activity> activities = [
@@ -69,5 +66,4 @@ List<Destination> destinations = [
     description: 'Visit QuyNhon for an amazing and unforgettable adventure.',
     activities: activities,
   ),
-
 ];

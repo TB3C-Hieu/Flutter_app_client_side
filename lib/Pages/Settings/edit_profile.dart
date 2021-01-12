@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:appro/main.dart';
+
 class Profile extends StatelessWidget {
   bool showPassword = false;
   @override
@@ -25,7 +25,7 @@ class Profile extends StatelessWidget {
             FocusScope.of(context).unfocus();
           },
           child: ListView(
-            children: <Widget> [
+            children: <Widget>[
               Text(
                 "Edit Profile",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
@@ -53,10 +53,7 @@ class Profile extends StatelessWidget {
                           shape: BoxShape.circle,
                           image: DecorationImage(
                               fit: BoxFit.contain,
-                              image: AssetImage('assets/images/paris.jpg'
-                              )
-                          )
-                      ),
+                              image: AssetImage('assets/images/paris.jpg'))),
                     ),
                     Positioned(
                         bottom: 0,
@@ -137,14 +134,14 @@ class Profile extends StatelessWidget {
         decoration: InputDecoration(
             suffixIcon: isPasswordTextField
                 ? IconButton(
-                  onPressed: (){
-                  showPassword =! showPassword;
-              },
-                  icon: Icon(
-                Icons.remove_red_eye,
-                color: Colors.grey,
-              ),
-            )
+                    onPressed: () {
+                      showPassword = !showPassword;
+                    },
+                    icon: Icon(
+                      Icons.remove_red_eye,
+                      color: Colors.grey,
+                    ),
+                  )
                 : null,
             contentPadding: EdgeInsets.only(bottom: 3),
             labelText: labelText,
@@ -159,6 +156,3 @@ class Profile extends StatelessWidget {
     );
   }
 }
-
-
-

@@ -152,7 +152,11 @@ class _HotelCState extends State<HotelC> {
                         );
                       });
                 }
-                return Text("Error");
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 140.0, horizontal: 20),
+                  child: Text("Be patient! Just a little bit more :D"),
+                );
               },
             )
 /*          child: ListView.builder(

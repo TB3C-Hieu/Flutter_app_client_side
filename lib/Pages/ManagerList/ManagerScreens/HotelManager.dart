@@ -41,30 +41,32 @@ class _hotelManagerState extends State<HotelManager> {
                 itemCount: snapshot.data.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                      padding: EdgeInsets.all(2.0),
                       margin: EdgeInsets.all(2.0),
-                      height: 80,
+                      padding: EdgeInsets.all(15.0),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10.0),
                       ),
-                      child: Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Text(
-                            '${snapshot.data[index].name}',
-                            style: TextStyle(
-                              fontSize: 30,
-                            ),
-                          )));
+                      child: ListTile(
+                        title: Text(
+                          '${snapshot.data[index].name}',
+                          style: TextStyle(
+                            fontSize: 30,
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/');
+                        },
+                      ));
                 },
               );
             }
             return Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 200.0, horizontal: 45),
+                  const EdgeInsets.symmetric(vertical: 300.0, horizontal: 20),
               child: Text(
-                "Be patient! Just a little bit more :D",
-                style: TextStyle(fontSize: 20),
+                "Hang Tight More Data Incoming !!!",
+                style: TextStyle(fontSize: 25),
               ),
             );
           },

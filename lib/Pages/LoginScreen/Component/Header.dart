@@ -18,7 +18,7 @@ class Header extends StatelessWidget {
             ),
             Center(
               child: Text(
-                'Lets see how "Zoro" are you?',
+                "Let's see how " + '"Zoro"' + ' are you ?',
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             )

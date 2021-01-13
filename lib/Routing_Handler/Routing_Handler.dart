@@ -5,6 +5,7 @@ import 'package:appro/Pages/ManagerList/ManagerList.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/CrewManager.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/HotelManager.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/LocationManager.dart';
+import 'package:appro/Pages/ManagerList/ManagerScreens/PersonManager.dart';
 import 'package:appro/Pages/Register/Register.dart';
 import 'package:appro/Pages/Settings/Setting.dart';
 import 'package:appro/Pages/Settings/edit_profile.dart';
@@ -37,6 +38,8 @@ class RouteHandler {
         return MaterialPageRoute(builder: (_) => LocationManager());
       case '/CrewManager':
         return MaterialPageRoute(builder: (_) => CrewManager());
+      case '/PersonManager':
+        return MaterialPageRoute(builder: (_) => PersonManager());
 
       default:
         return _errorRoute();

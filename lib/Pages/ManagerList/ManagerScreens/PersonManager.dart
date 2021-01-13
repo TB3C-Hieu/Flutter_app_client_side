@@ -1,3 +1,4 @@
+import 'package:appro/Models/Person.dart';
 import 'package:appro/Processors/PreApi/PreAPI.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ class _personManagerState extends State<PersonManager> {
   Future<List> fetchListPerson() async {
     final response = await _helper.get('/person');
 
-/*    return PersonModelList.fromJson(response).hotels;*/
+    return PersonModelList.fromJson(response).persons;
   }
 
   @override
@@ -29,7 +30,7 @@ class _personManagerState extends State<PersonManager> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hotel Manager'),
+        title: Text('Person Manager'),
       ),
       body: Container(
         child: FutureBuilder<List>(

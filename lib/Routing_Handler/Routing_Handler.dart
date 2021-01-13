@@ -1,11 +1,13 @@
 import 'package:appro/Pages/HomeScreen/HomeScreen.dart';
 import 'package:appro/Pages/HomeScreen/Widget//DestinationScreen.dart';
 import 'package:appro/Pages/LoginScreen/LoginPage.dart';
+import 'package:appro/Pages/ManagerList/Info/HotelInfo.dart';
 import 'package:appro/Pages/ManagerList/ManagerList.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/CrewManager.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/HotelManager.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/LocationManager.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/PersonManager.dart';
+import 'package:appro/Pages/ManagerList/ManagerScreens/TourManager.dart';
 import 'package:appro/Pages/Register/Register.dart';
 import 'package:appro/Pages/Settings/Setting.dart';
 import 'package:appro/Pages/Settings/edit_profile.dart';
@@ -48,6 +50,8 @@ class RouteHandler {
         return MaterialPageRoute(builder: (_) => CrewManager());
       case '/PersonManager':
         return MaterialPageRoute(builder: (_) => PersonManager());
+      case '/TourManager':
+        return MaterialPageRoute(builder: (_) => TourManager());
       case '/HotelInfo':
         return MaterialPageRoute(builder: (_) => HotelInfoPage());
       case '/CrewInfo':

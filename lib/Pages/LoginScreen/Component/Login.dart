@@ -1,8 +1,7 @@
+import 'package:appro/Models/UserCred/Cred.dart';
 import 'package:appro/Pages/LoginScreen/LoginPage.dart';
 import 'package:appro/Processors/PreApi/PreAPI.dart';
 import 'package:flutter/material.dart';
-
-import 'package:appro/Models/UserCred/Cred.dart';
 
 class LoginButton extends StatelessWidget {
   PreAPI _helper = PreAPI();

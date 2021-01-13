@@ -6,7 +6,21 @@ import 'Component/InputWrapper.dart';
 final TextEditingController usernameController = new TextEditingController();
 final TextEditingController passwordController = new TextEditingController();
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _loginPageState();
+  }
+}
+
+class _loginPageState extends State<LoginPage> {
+  @override
+  void dispose() {
+    usernameController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

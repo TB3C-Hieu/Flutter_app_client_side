@@ -10,6 +10,7 @@ import 'package:appro/Pages/Register/Register.dart';
 import 'package:appro/Pages/Settings/Setting.dart';
 import 'package:appro/Pages/Settings/edit_profile.dart';
 import 'package:appro/Pages/TestCase/TestCase.dart';
+import 'package:appro/Pages/ManagerList/Info/HotelInfo.dart';
 import 'package:flutter/material.dart';
 
 class RouteHandler {
@@ -40,7 +41,8 @@ class RouteHandler {
         return MaterialPageRoute(builder: (_) => CrewManager());
       case '/PersonManager':
         return MaterialPageRoute(builder: (_) => PersonManager());
-
+      case '/HotelInfo':
+        return MaterialPageRoute(builder: (_) => HotelInfoPage());
       default:
         return _errorRoute();
     }

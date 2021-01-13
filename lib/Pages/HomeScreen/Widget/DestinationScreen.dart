@@ -141,10 +141,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                 Activity activity = widget.destination.activities[index];
                 return Stack(
                   children: <Widget>[
-                    Slidable(
-                      actionPane: SlidableDrawerActionPane(),
-                      actionExtentRatio: 0.25,
-                      child: Stack(
+                      Stack(
                       children:<Widget>[
                         Container(
                         margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
@@ -207,13 +204,11 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                           actions: <Widget>[
                                             FlatButton(child: Text("No"),
                                               onPressed: () {
-                                                //Put your code here which you want to execute on Yes button click.
                                                 Navigator.of(context).pop();
                                               },
                                             ),
                                             FlatButton(child: Text("Yes"),
                                               onPressed: () {
-                                                //Put your code here which you want to execute on Yes button click.
                                                 Navigator.of(context).pop();
                                               },
                                             ),
@@ -270,19 +265,6 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     ),
                       ],
                           ),
-                        secondaryActions:<Widget>[
-                          IconSlideAction(
-                            caption: 'Edit',
-                            color: Colors.black,
-                            icon: Icons.settings,
-                          ),
-                          IconSlideAction(
-                            caption: 'Delete',
-                            color: Colors.red,
-                            icon: Icons.restore_from_trash,
-                          )
-                            ]
-                        )
                   ],
                 );
               },

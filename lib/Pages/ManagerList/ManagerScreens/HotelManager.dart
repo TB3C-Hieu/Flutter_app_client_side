@@ -55,7 +55,7 @@ class _hotelManagerState extends State<HotelManager> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/');
+                          Navigator.pushNamed(context, '/HotelInfo');
                         },
                       ));
                 },

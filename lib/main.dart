@@ -1,6 +1,6 @@
 import 'package:appro/Routing_Handler/Routing_Handler.dart';
 import 'package:flutter/material.dart';
-import 'package:appro/Pages/Settings/Add_tour.dart';
+import 'package:appro/Pages/ManagerList/Info/HotelInfo.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/HomeScreen',
       onGenerateRoute: RouteHandler.generateRoute,
-      /*home: Add_tour(),*/
+      //home: HotelInfoPage(),
     );
   }
 }

@@ -5,6 +5,7 @@ import 'package:appro/Models/destinations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 
+
 class DestinationScreen extends StatefulWidget {
   final Destination destination;
 
@@ -146,15 +147,15 @@ class _DestinationScreenState extends State<DestinationScreen> {
                       child: Stack(
                       children:<Widget>[
                         Container(
-                      margin: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 5.0),
-                      height: 170.0,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
+                        margin: EdgeInsets.fromLTRB(20.0, 5.0, 20.0, 5.0),
+                        height: 170.0,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                           child: Padding(
-                          padding: EdgeInsets.fromLTRB(100.0, 20.0, 20.0, 20.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 20.0),
                             child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -191,6 +192,38 @@ class _DestinationScreenState extends State<DestinationScreen> {
                                       ),
                                     ),
                                   ],
+                                ),
+                                IconButton(
+                                  icon: Icon(Icons.add_shopping_cart),
+                                  iconSize:30,
+                                  color: Colors.red,
+                                  onPressed:() {
+                                    showDialog(
+                                      context: context,
+                                      builder: (_){
+                                        return AlertDialog(
+                                          title: Text('Add to cart',style: TextStyle(fontSize: 20),),
+                                          content: Text('Bạn có muốn thêm vào giỏ hàng', style: TextStyle(fontSize: 20),),
+                                          actions: <Widget>[
+                                            FlatButton(child: Text("No"),
+                                              onPressed: () {
+                                                //Put your code here which you want to execute on Yes button click.
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                            FlatButton(child: Text("Yes"),
+                                              onPressed: () {
+                                                //Put your code here which you want to execute on Yes button click.
+                                                Navigator.of(context).pop();
+                                              },
+                                            ),
+                                          ],
+                                          backgroundColor: Colors.cyan[500],
+                                        );
+                                      },
+                                      barrierDismissible: true,);
+                                    //Navigator.pushNamed(context, '/');
+                                  },
                                 ),
                               ],
                             ),
@@ -235,44 +268,22 @@ class _DestinationScreenState extends State<DestinationScreen> {
                         ),
                       ),
                     ),
-                        /*Container(
-                          alignment: Alignment.bottomLeft,
-                          child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0),
-                            child: Image(
-                            width: 110.0,
-                            image: AssetImage(
-                              activity.imageUrl,
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),*/
-                      /*secondaryActions(
-                        IconSlideAction(
-                          caption: 'Edit',
-                          color: Colors.black,
-                          icon: Icons.settings,
-                        ),
-                      )*/
                       ],
                           ),
-                   /* Positioned(
-                      left: 20.0,
-                      top: 15.0,
-                      bottom: 15.0,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image(
-                          width: 110.0,
-                          image: AssetImage(
-                            activity.imageUrl,
+                        secondaryActions:<Widget>[
+                          IconSlideAction(
+                            caption: 'Edit',
+                            color: Colors.black,
+                            icon: Icons.settings,
                           ),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),*/
-                )],
+                          IconSlideAction(
+                            caption: 'Delete',
+                            color: Colors.red,
+                            icon: Icons.restore_from_trash,
+                          )
+                            ]
+                        )
+                  ],
                 );
               },
             ),

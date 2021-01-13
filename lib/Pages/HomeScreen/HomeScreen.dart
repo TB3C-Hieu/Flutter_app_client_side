@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: drawer(context),
-      appBar: appBar(),
+      appBar: appBar(context),
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(vertical: 30),

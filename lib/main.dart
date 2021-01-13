@@ -1,5 +1,6 @@
 import 'package:appro/Routing_Handler/Routing_Handler.dart';
 import 'package:flutter/material.dart';
+import 'package:appro/Pages/Settings/Add_tour.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/HomeScreen',
       onGenerateRoute: RouteHandler.generateRoute,
-      /*home: SettingsPage(),*/
+      /*home: Add_tour(),*/
     );
   }
 }

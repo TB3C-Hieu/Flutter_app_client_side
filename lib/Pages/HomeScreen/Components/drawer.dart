@@ -54,6 +54,13 @@ Widget drawer(BuildContext context) {
                 Navigator.pushNamed(context, '/ProFilePage');
               },
             ),
+            MenuItem(
+              icon: Icons.person,
+              title: "My Tour",
+              onTap: () {
+                Navigator.pushNamed(context, '/ProFilePage');
+              },
+            ),
 
             Divider(
               height: 64,

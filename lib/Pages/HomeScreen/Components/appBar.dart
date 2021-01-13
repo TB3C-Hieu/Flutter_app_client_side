@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget appBar() {
+Widget appBar(BuildContext context) {
   return AppBar(
     elevation: 0.0,
     backgroundColor: Color(0xFF3EBACE),
@@ -17,7 +17,16 @@ Widget appBar() {
         icon: Icon(
           Icons.notifications,
         ),
-        onPressed: () => {},
+        onPressed: () => {
+        },
+      ),
+      IconButton(
+        icon: Icon(
+          Icons.add,
+        ),
+        onPressed: () =>{
+          Navigator.pushNamed(context,'/AddTour')
+        },
       ),
     ],
   );

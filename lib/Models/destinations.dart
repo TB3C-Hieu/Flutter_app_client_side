@@ -46,7 +46,7 @@ List<Activity> activities = [
 
 List<Destination> destinations = [
   Destination(
-    imageUrl: 'assets/images/venice.jpg',
+    imageUrl: 'assets/images/nhatrang.jpg',
     city: 'NhaTrang',
     country: 'VietNam',
     description: 'Visit NhaTrang for an amazing and unforgettable adventure.',

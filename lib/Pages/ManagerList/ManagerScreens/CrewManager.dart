@@ -55,7 +55,7 @@ class _crewManagerState extends State<CrewManager> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/');
+                          Navigator.pushNamed(context, '/CrewInfo');
                         },
                       ));
                 },

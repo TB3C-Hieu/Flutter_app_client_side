@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class CrewInfoPage extends StatelessWidget {
-  //final image = AssetImage('assets/images/test.jpg');
+class CrewInfoPage extends StatefulWidget {
+  @override
+  _CrewInfoPageState createState() => _CrewInfoPageState();
+}
+
+class _CrewInfoPageState extends State<CrewInfoPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(

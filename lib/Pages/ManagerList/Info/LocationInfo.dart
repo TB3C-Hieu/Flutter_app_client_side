@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class LocationInfoPage extends StatelessWidget {
-  //final image = AssetImage('assets/images/test.jpg');
+class LocationInfoPage extends StatefulWidget {
+@override
+_LocationInfoPageState createState() => _LocationInfoPageState();
+}
+
+class _LocationInfoPageState extends State<LocationInfoPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(

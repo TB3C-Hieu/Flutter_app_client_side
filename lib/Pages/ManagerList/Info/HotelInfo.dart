@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class HotelInfoPage extends StatelessWidget {
-  //final image = AssetImage('assets/images/test.jpg');
+class HotelInfoPage extends StatefulWidget {
+ @override
+  _HotelInfoPageState createState() => _HotelInfoPageState();
+}
+
+class _HotelInfoPageState extends State<HotelInfoPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,13 +14,6 @@ class HotelInfoPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Stack(
           children: <Widget>[
-            /*SizedBox(
-              height: 250,
-              width: double.infinity,
-              child: image
-                fit: BoxFit.cover,
-              ),
-            ),*/
             Container(
               margin: EdgeInsets.fromLTRB(16.0, 200.0, 16.0, 16.0),
               child: Column(
@@ -51,15 +48,6 @@ class HotelInfoPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      // Container(
-                      //   height: 80,
-                      //   width: 80,
-                      //   decoration: BoxDecoration(
-                      //       borderRadius: BorderRadius.circular(10.0),
-                      //       image: DecorationImage(
-                      //           image: NetworkImage(image), fit: BoxFit.cover)),
-                      //   margin: EdgeInsets.only(left: 16.0),
-                      // ),
                     ],
                   ),
                   SizedBox(height: 20.0),

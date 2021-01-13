@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class VehicleInfoPage extends StatelessWidget {
-  //final image = AssetImage('assets/images/test.jpg');
+class VehicleInfoPage extends StatefulWidget {
+  @override
+  _VehicleInfoPageState createState() => _VehicleInfoPageState();
+}
+
+class _VehicleInfoPageState extends State<VehicleInfoPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(

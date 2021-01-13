@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class TransferInfoPage extends StatelessWidget {
-  //final image = AssetImage('assets/images/test.jpg');
+class TransferInfoPage extends StatefulWidget {
+  @override
+  _TransferInfoPageState createState() => _TransferInfoPageState();
+}
+
+class _TransferInfoPageState extends State<TransferInfoPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(

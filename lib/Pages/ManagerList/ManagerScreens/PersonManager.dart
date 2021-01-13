@@ -55,7 +55,7 @@ class _personManagerState extends State<PersonManager> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/');
+                          Navigator.pushNamed(context, '/PersonInfo');
                         },
                       ));
                 },

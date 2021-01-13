@@ -12,6 +12,14 @@ import 'package:appro/Pages/Register/Register.dart';
 import 'package:appro/Pages/Settings/Setting.dart';
 import 'package:appro/Pages/Settings/edit_profile.dart';
 import 'package:appro/Pages/TestCase/TestCase.dart';
+import 'package:appro/Pages/ManagerList/Info/HotelInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/CrewInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/LocationInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/PersonInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/TourInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/TransferInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/VehicleInfo.dart';
+
 import 'package:flutter/material.dart';
 
 class RouteHandler {
@@ -46,6 +54,18 @@ class RouteHandler {
         return MaterialPageRoute(builder: (_) => TourManager());
       case '/HotelInfo':
         return MaterialPageRoute(builder: (_) => HotelInfoPage());
+      case '/CrewInfo':
+        return MaterialPageRoute(builder: (_) => CrewInfoPage());
+      case '/LocationInfo':
+        return MaterialPageRoute(builder: (_) => LocationInfoPage());
+      case '/PersonInfo':
+        return MaterialPageRoute(builder: (_) => PersonInfoPage());
+      case '/TourInfo':
+        return MaterialPageRoute(builder: (_) => TourInfoPage());
+      case '/TransferInfo':
+        return MaterialPageRoute(builder: (_) => TransferInfoPage());
+      case '/VehicleInfo':
+        return MaterialPageRoute(builder: (_) => VehicleInfoPage());
 
       default:
         return _errorRoute();

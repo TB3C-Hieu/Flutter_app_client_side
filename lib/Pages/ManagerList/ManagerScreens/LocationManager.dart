@@ -55,7 +55,7 @@ class _locationManagerState extends State<LocationManager> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/');
+                          Navigator.pushNamed(context, '/LocationInfo');
                         },
                       ));
                 },

@@ -13,7 +13,7 @@ class _tourManagerState extends State<TourManager> {
 
   PreAPI _helper = PreAPI();
 
-  Future<List> fetchListHotel() async {
+  Future<List> fetchListTour() async {
     final response = await _helper.get('/tour');
 
     return TourModelList.fromJson(response).tours;
@@ -21,7 +21,7 @@ class _tourManagerState extends State<TourManager> {
 
   @override
   void initState() {
-    tours = fetchListHotel();
+    tours = fetchListTour();
 
     super.initState();
   }
@@ -30,7 +30,7 @@ class _tourManagerState extends State<TourManager> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hotel Manager'),
+        title: Text('Tour Manager'),
       ),
       body: Container(
         child: FutureBuilder<List>(

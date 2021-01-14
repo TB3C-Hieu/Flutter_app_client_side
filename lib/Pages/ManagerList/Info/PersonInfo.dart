@@ -35,7 +35,7 @@ class _PersonInfoPageState extends State<PersonInfoPage>{
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    "Đoàn A",
+                                    "Người A",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize:30,
@@ -59,11 +59,11 @@ class _PersonInfoPageState extends State<PersonInfoPage>{
                     child: Column(
                       children: <Widget>[
                         ListTile(
-                          title: Text("Thông tin đoàn"),
+                          title: Text("Thông tin "),
                         ),
                         Divider(),
                         ListTile(
-                            title: Text('Tên đoàn'),
+                            title: Text('Tên '),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",
@@ -71,7 +71,7 @@ class _PersonInfoPageState extends State<PersonInfoPage>{
                             )
                         ),
                         ListTile(
-                            title: Text('Ngày'),
+                            title: Text('Giới tính'),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",
@@ -79,21 +79,21 @@ class _PersonInfoPageState extends State<PersonInfoPage>{
                             )
                         ),
                         ListTile(
-                            title: Text("Giờ"),
+                            title: Text("Số điện thoại"),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",
                               ),
                             )
                         ),
-                        ListTile(
-                            title: Text("Điểm đến"),
-                            subtitle: TextField(
-                              decoration: InputDecoration(
-                                hintText: "46 Buoi Thi Xuan",
-                              ),
-                            )
-                        ),
+                        // ListTile(
+                        //     title: Text("Điểm đến"),
+                        //     subtitle: TextField(
+                        //       decoration: InputDecoration(
+                        //         hintText: "46 Buoi Thi Xuan",
+                        //       ),
+                        //     )
+                        // ),
                       ],
                     ),
                   )

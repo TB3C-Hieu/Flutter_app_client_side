@@ -55,7 +55,7 @@ class _tourManagerState extends State<TourManager> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/HotelInfo');
+                          Navigator.pushNamed(context, '/TourInfo');
                         },
                       ));
                 },

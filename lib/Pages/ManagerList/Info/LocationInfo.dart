@@ -63,7 +63,7 @@ class _LocationInfoPageState extends State<LocationInfoPage>{
                         ),
                         Divider(),
                         ListTile(
-                            title: Text('Địa chỉ'),
+                            title: Text('Tên địa điểm'),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",
@@ -71,7 +71,7 @@ class _LocationInfoPageState extends State<LocationInfoPage>{
                             )
                         ),
                         ListTile(
-                            title: Text("Giá"),
+                            title: Text("Địa chỉ"),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",

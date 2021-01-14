@@ -35,7 +35,7 @@ class _TourInfoPageState extends State<TourInfoPage>{
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    "Đoàn A",
+                                    "Tour A",
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize:30,
@@ -59,11 +59,11 @@ class _TourInfoPageState extends State<TourInfoPage>{
                     child: Column(
                       children: <Widget>[
                         ListTile(
-                          title: Text("Thông tin đoàn"),
+                          title: Text("Thông tin Tour"),
                         ),
                         Divider(),
                         ListTile(
-                            title: Text('Tên đoàn'),
+                            title: Text('Tên Tour'),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",
@@ -71,7 +71,7 @@ class _TourInfoPageState extends State<TourInfoPage>{
                             )
                         ),
                         ListTile(
-                            title: Text('Ngày'),
+                            title: Text("Giá"),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",
@@ -79,15 +79,7 @@ class _TourInfoPageState extends State<TourInfoPage>{
                             )
                         ),
                         ListTile(
-                            title: Text("Giờ"),
-                            subtitle: TextField(
-                              decoration: InputDecoration(
-                                hintText: "46 Buoi Thi Xuan",
-                              ),
-                            )
-                        ),
-                        ListTile(
-                            title: Text("Điểm đến"),
+                            title: Text("Nội dung"),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",

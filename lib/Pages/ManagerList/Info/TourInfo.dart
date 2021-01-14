@@ -110,8 +110,8 @@ class _TourInfoPageState extends State<TourInfoPage> {
                           future: locations,
                           builder: (BuildContext context,
                               AsyncSnapshot<List> snapshot) {
-                            if (snapshot.hasData) {
-                              return ListView.builder(
+/*                            if (snapshot.hasData) {*/
+                            /* return ListView.builder(
                                   itemCount: snapshot.data.length,
                                   itemBuilder:
                                       (BuildContext context, int index) {
@@ -132,7 +132,7 @@ class _TourInfoPageState extends State<TourInfoPage> {
                                           ),
                                         ));
                                   });
-                            }
+                            }*/
                             return Padding(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 300.0, horizontal: 20),

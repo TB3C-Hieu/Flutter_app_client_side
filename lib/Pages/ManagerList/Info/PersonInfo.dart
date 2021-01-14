@@ -86,14 +86,14 @@ class _PersonInfoPageState extends State<PersonInfoPage>{
                               ),
                             )
                         ),
-                        // ListTile(
-                        //     title: Text("Điểm đến"),
-                        //     subtitle: TextField(
-                        //       decoration: InputDecoration(
-                        //         hintText: "46 Buoi Thi Xuan",
-                        //       ),
-                        //     )
-                        // ),
+                        ListTile(
+                            title: Text("ID"),
+                            subtitle: TextField(
+                              decoration: InputDecoration(
+                                hintText: "46 Buoi Thi Xuan",
+                              ),
+                            )
+                        ),
                       ],
                     ),
                   )

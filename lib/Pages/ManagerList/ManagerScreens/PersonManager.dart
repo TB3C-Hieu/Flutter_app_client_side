@@ -31,6 +31,15 @@ class _personManagerState extends State<PersonManager> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Person Manager'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.add,
+              ),
+              onPressed: () => {
+              },
+            ),
+          ]
       ),
       body: Container(
         child: FutureBuilder<List>(

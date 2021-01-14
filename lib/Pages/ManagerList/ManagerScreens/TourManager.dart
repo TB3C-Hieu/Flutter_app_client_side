@@ -31,6 +31,15 @@ class _tourManagerState extends State<TourManager> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Tour Manager'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.add,
+              ),
+              onPressed: () => {
+              },
+            ),
+          ]
       ),
       body: Container(
         child: FutureBuilder<List>(

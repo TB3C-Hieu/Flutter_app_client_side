@@ -31,6 +31,15 @@ class _hotelManagerState extends State<HotelManager> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Hotel Manager'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.add,
+              ),
+              onPressed: () => {
+              },
+            ),
+          ]
       ),
       body: Container(
         child: FutureBuilder<List>(

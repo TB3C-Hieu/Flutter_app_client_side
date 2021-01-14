@@ -71,7 +71,7 @@ class _CrewInfoPageState extends State<CrewInfoPage>{
                             )
                         ),
                         ListTile(
-                            title: Text('Ngày'),
+                            title: Text('Ngày bắt đầu'),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",
@@ -79,21 +79,21 @@ class _CrewInfoPageState extends State<CrewInfoPage>{
                             )
                         ),
                         ListTile(
-                            title: Text("Giờ"),
+                            title: Text("Ngày kết thúc"),
                             subtitle: TextField(
                               decoration: InputDecoration(
                                 hintText: "46 Buoi Thi Xuan",
                               ),
                             )
                         ),
-                        ListTile(
-                            title: Text("Điểm đến"),
-                            subtitle: TextField(
-                              decoration: InputDecoration(
-                                hintText: "46 Buoi Thi Xuan",
-                              ),
-                            )
-                        ),
+                        // ListTile(
+                        //     title: Text("Điểm đến"),
+                        //     subtitle: TextField(
+                        //       decoration: InputDecoration(
+                        //         hintText: "46 Buoi Thi Xuan",
+                        //       ),
+                        //     )
+                        // ),
                       ],
                     ),
                   )

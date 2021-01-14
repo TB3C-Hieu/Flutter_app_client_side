@@ -31,6 +31,15 @@ class _locationManagerState extends State<LocationManager> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Location Manager'),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.add,
+              ),
+              onPressed: () => {
+              },
+            ),
+          ]
       ),
       body: Container(
         child: FutureBuilder<List>(

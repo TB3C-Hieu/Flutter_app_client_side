@@ -31,6 +31,15 @@ class _crewManagerState extends State<CrewManager> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Crew Manager'),
+        actions: <Widget>[
+        IconButton(
+          icon: Icon(
+        Icons.add,
+      ),
+      onPressed: () => {
+      },
+    ),
+      ]
       ),
       body: Container(
         child: FutureBuilder<List>(

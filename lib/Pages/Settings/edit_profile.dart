@@ -1,6 +1,21 @@
+import 'package:appro/Variables/Global.dart';
 import 'package:flutter/material.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
+  Global_Variables variables = Global_Variables.getInstance();
+
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<Profile> {
+  @override
+  void initState() {
+    widget.variables.currentUser = widget.variables.fetchCurrentPerson();
+
+    super.initState();
+  }
+
   bool showPassword = false;
   @override
   Widget build(BuildContext context) {
@@ -80,10 +95,31 @@ class Profile extends StatelessWidget {
               SizedBox(
                 height: 35,
               ),
-              buildTextField("Full Name", "Hieu Nguyen", false),
-              buildTextField("E-mail", "alexd@gmail.com", false),
-              buildTextField("Password", "********", true),
-              buildTextField("Location", "Tuy Hoa, Phu Yen", false),
+              FutureBuilder<dynamic>(
+                  future: widget.variables.currentUser,
+                  builder:
+                      (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+                    if (snapshot.hasData) {
+                      return Column(
+                        children: <Widget>[
+                          buildTextField(
+                              "Full Name", snapshot.data.name, false),
+                          buildTextField(
+                              "Phone Number", snapshot.data.phoneNumber, false),
+                          buildTextField(
+                              "ID", snapshot.data.identificationCard, true),
+                        ],
+                      );
+                    }
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 140.0, horizontal: 20),
+                      child: Text("Crunching . . ."),
+                    );
+                  }),
+              // buildTextField("Full Name", "Hieu Nguyen", false),
+              // buildTextField("E-mail", "alexd@gmail.com", false),
+              // buildTextField("Password", "********", true),
               SizedBox(
                 height: 35,
               ),

@@ -1,4 +1,5 @@
 import 'package:appro/Models/Person.dart';
+import 'package:appro/Processors/PreApi/PreAPI.dart';
 
 class Global_Variables {
   //#region singleton
@@ -12,7 +13,20 @@ class Global_Variables {
 
   //#endregion
 
-  //#region variables
-  Person currentUser = Person();
+  //#region Networking
+  PreAPI _helper = PreAPI();
+
   //#endregion
+
+  //#region variables
+  Future<Person> currentUser;
+
+  int accountId;
+  //#endregion
+
+  Future<Person> fetchCurrentPerson() async {
+    final response = await _helper.get('/account/$accountId/person');
+
+    return Person.fromJson(response);
+  }
 }

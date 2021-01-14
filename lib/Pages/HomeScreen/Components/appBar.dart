@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 Widget appBar(BuildContext context) {
   return AppBar(
@@ -22,10 +23,10 @@ Widget appBar(BuildContext context) {
       ),
       IconButton(
         icon: Icon(
-          Icons.add,
+          FontAwesomeIcons.angleDoubleRight,
         ),
         onPressed: () =>{
-          Navigator.pushNamed(context,'/AddTour')
+          Navigator.pushNamed(context,'/Add')
         },
       ),
     ],

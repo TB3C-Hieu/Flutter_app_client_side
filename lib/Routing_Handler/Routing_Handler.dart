@@ -19,6 +19,7 @@ import 'package:appro/Pages/ManagerList/Info/PersonInfo.dart';
 import 'package:appro/Pages/ManagerList/Info/TourInfo.dart';
 import 'package:appro/Pages/ManagerList/Info/TransferInfo.dart';
 import 'package:appro/Pages/ManagerList/Info/VehicleInfo.dart';
+import 'package:appro/Pages/Settings/Add.dart';
 
 import 'package:flutter/material.dart';
 
@@ -40,6 +41,8 @@ class RouteHandler {
         return MaterialPageRoute(builder: (_) => Profile());
       case '/SettingPage':
         return MaterialPageRoute(builder: (_) => SettingsPage());
+      case '/Add':
+        return MaterialPageRoute(builder: (_)=> Add());
       case '/ManagerPage':
         return MaterialPageRoute(builder: (_) => ManagerList());
       case '/HotelManager':

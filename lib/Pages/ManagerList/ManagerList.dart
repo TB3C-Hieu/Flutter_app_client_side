@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 class ManagerList extends StatelessWidget {
   final Map<int, String> _map = {
-    0: 'Hotel',
-    1: 'Crew',
+    0: 'Crew',
+    1: 'Tour',
     2: 'Person',
-    3: 'Expense',
-    4: 'Location',
-    5: 'Tour',
+    3: 'Location',
+    4: 'Hotel',
+    5: 'Expense',
     6: 'Transfer',
     7: 'Vehicle',
   };

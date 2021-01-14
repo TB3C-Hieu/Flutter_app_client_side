@@ -1,6 +1,7 @@
 import 'package:appro/Models/UserCred/Cred.dart';
 import 'package:appro/Pages/LoginScreen/LoginPage.dart';
 import 'package:appro/Processors/PreApi/PreAPI.dart';
+import 'package:appro/Variables/Global.dart';
 import 'package:flutter/material.dart';
 
 class LoginButton extends StatelessWidget {
@@ -39,6 +40,7 @@ class LoginButton extends StatelessWidget {
             onPressed: () async {
               int status = await this.login();
               if (status != null && status != 0) {
+                Global_Variables.getInstance().accountId = status;
                 Navigator.pushNamed(context, '/HomeScreen');
               } else {
                 Navigator.pushNamed(context, '/');

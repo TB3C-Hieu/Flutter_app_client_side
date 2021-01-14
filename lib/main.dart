@@ -1,6 +1,5 @@
 import 'package:appro/Routing_Handler/Routing_Handler.dart';
 import 'package:flutter/material.dart';
-import 'package:appro/Pages/Settings/Add.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         accentColor: Color(0xFFD8ECF1),
         scaffoldBackgroundColor: Color(0xFFF3F5F7),
       ),
-      initialRoute: '/HomeScreen',
+      initialRoute: '/',
       onGenerateRoute: RouteHandler.generateRoute,
       //home: Add(),
     );

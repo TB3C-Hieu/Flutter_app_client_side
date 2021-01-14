@@ -1,12 +1,35 @@
+import 'package:appro/Models/Location/Location.dart';
+import 'package:appro/Processors/PreApi/PreAPI.dart';
 import 'package:flutter/material.dart';
 
-
 class TourInfoPage extends StatefulWidget {
+  Map tour;
+
+  TourInfoPage({this.tour});
+
   @override
   _TourInfoPageState createState() => _TourInfoPageState();
 }
 
-class _TourInfoPageState extends State<TourInfoPage>{
+class _TourInfoPageState extends State<TourInfoPage> {
+  Future<List> locations;
+
+  PreAPI _helper = PreAPI();
+
+  @override
+  void initState() {
+    this.locations = fetchListLocation();
+    super.initState();
+  }
+
+  Future<List> fetchListLocation() async {
+    int status = widget.tour['idTour'];
+    final response =
+        await _helper.get('/tour/' + status.toString() + '/location');
+
+    return LocationModelList.fromJson(response).result;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +58,10 @@ class _TourInfoPageState extends State<TourInfoPage>{
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
-                                    "Tour A",
+                                    widget.tour['tourName'],
                                     style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      fontSize:30,
+                                      fontSize: 30,
                                     ),
                                   ),
                                 ],
@@ -66,25 +89,59 @@ class _TourInfoPageState extends State<TourInfoPage>{
                             title: Text('Tên Tour'),
                             subtitle: TextField(
                               decoration: InputDecoration(
-                                hintText: "46 Buoi Thi Xuan",
+                                hintText: widget.tour['tourName'],
                               ),
-                            )
-                        ),
+                            )),
                         ListTile(
                             title: Text("Giá"),
                             subtitle: TextField(
                               decoration: InputDecoration(
-                                hintText: "46 Buoi Thi Xuan",
+                                hintText: widget.tour['tourPrice'].toString(),
                               ),
-                            )
-                        ),
+                            )),
                         ListTile(
                             title: Text("Nội dung"),
                             subtitle: TextField(
                               decoration: InputDecoration(
-                                hintText: "46 Buoi Thi Xuan",
+                                hintText: widget.tour['tourInfo'],
                               ),
-                            )
+                            )),
+                        FutureBuilder<List>(
+                          future: locations,
+                          builder: (BuildContext context,
+                              AsyncSnapshot<List> snapshot) {
+                            if (snapshot.hasData) {
+                              return ListView.builder(
+                                  itemCount: snapshot.data.length,
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    return Container(
+                                        margin: EdgeInsets.all(2.0),
+                                        padding: EdgeInsets.all(15.0),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(10.0),
+                                        ),
+                                        child: ListTile(
+                                          title: Text(
+                                            '${snapshot.data[index].locationName}',
+                                            style: TextStyle(
+                                              fontSize: 30,
+                                            ),
+                                          ),
+                                        ));
+                                  });
+                            }
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 300.0, horizontal: 20),
+                              child: Text(
+                                "Crunching . . .",
+                                style: TextStyle(fontSize: 25),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
@@ -109,15 +166,13 @@ class _TourInfoPageState extends State<TourInfoPage>{
                   icon: Icon(
                     Icons.delete,
                   ),
-                  onPressed: () => {
-                  },
+                  onPressed: () => {},
                 ),
                 IconButton(
                   icon: Icon(
                     Icons.save,
                   ),
-                  onPressed: () => {
-                  },
+                  onPressed: () => {},
                 ),
               ],
             ),

@@ -1,7 +1,13 @@
 import 'package:appro/Pages/HomeScreen/HomeScreen.dart';
 import 'package:appro/Pages/HomeScreen/Widget//DestinationScreen.dart';
 import 'package:appro/Pages/LoginScreen/LoginPage.dart';
+import 'package:appro/Pages/ManagerList/Info/CrewInfo.dart';
 import 'package:appro/Pages/ManagerList/Info/HotelInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/LocationInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/PersonInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/TourInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/TransferInfo.dart';
+import 'package:appro/Pages/ManagerList/Info/VehicleInfo.dart';
 import 'package:appro/Pages/ManagerList/ManagerList.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/CrewManager.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/HotelManager.dart';
@@ -9,18 +15,10 @@ import 'package:appro/Pages/ManagerList/ManagerScreens/LocationManager.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/PersonManager.dart';
 import 'package:appro/Pages/ManagerList/ManagerScreens/TourManager.dart';
 import 'package:appro/Pages/Register/Register.dart';
+import 'package:appro/Pages/Settings/Add.dart';
 import 'package:appro/Pages/Settings/Setting.dart';
 import 'package:appro/Pages/Settings/edit_profile.dart';
 import 'package:appro/Pages/TestCase/TestCase.dart';
-import 'package:appro/Pages/ManagerList/Info/HotelInfo.dart';
-import 'package:appro/Pages/ManagerList/Info/CrewInfo.dart';
-import 'package:appro/Pages/ManagerList/Info/LocationInfo.dart';
-import 'package:appro/Pages/ManagerList/Info/PersonInfo.dart';
-import 'package:appro/Pages/ManagerList/Info/TourInfo.dart';
-import 'package:appro/Pages/ManagerList/Info/TransferInfo.dart';
-import 'package:appro/Pages/ManagerList/Info/VehicleInfo.dart';
-import 'package:appro/Pages/Settings/Add.dart';
-
 import 'package:flutter/material.dart';
 
 class RouteHandler {
@@ -42,7 +40,7 @@ class RouteHandler {
       case '/SettingPage':
         return MaterialPageRoute(builder: (_) => SettingsPage());
       case '/Add':
-        return MaterialPageRoute(builder: (_)=> Add());
+        return MaterialPageRoute(builder: (_) => Add());
       case '/ManagerPage':
         return MaterialPageRoute(builder: (_) => ManagerList());
       case '/HotelManager':
@@ -64,7 +62,10 @@ class RouteHandler {
       case '/PersonInfo':
         return MaterialPageRoute(builder: (_) => PersonInfoPage());
       case '/TourInfo':
-        return MaterialPageRoute(builder: (_) => TourInfoPage());
+        return MaterialPageRoute(
+            builder: (_) => TourInfoPage(
+                  tour: args,
+                ));
       case '/TransferInfo':
         return MaterialPageRoute(builder: (_) => TransferInfoPage());
       case '/VehicleInfo':

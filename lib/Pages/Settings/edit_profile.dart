@@ -107,7 +107,7 @@ class _ProfilePageState extends State<Profile> {
                           buildTextField(
                               "Phone Number", snapshot.data.phoneNumber, false),
                           buildTextField(
-                              "ID", snapshot.data.identificationCard, true),
+                              "ID", snapshot.data.identificationCard, false),
                         ],
                       );
                     }

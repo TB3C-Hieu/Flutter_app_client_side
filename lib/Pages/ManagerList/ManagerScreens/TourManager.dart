@@ -29,18 +29,14 @@ class _tourManagerState extends State<TourManager> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Tour Manager'),
-          actions: <Widget>[
-            IconButton(
-              icon: Icon(
-                Icons.add,
-              ),
-              onPressed: () => {
-              },
-            ),
-          ]
-      ),
+      appBar: AppBar(title: Text('Tour Manager'), actions: <Widget>[
+        IconButton(
+          icon: Icon(
+            Icons.add,
+          ),
+          onPressed: () => {},
+        ),
+      ]),
       body: Container(
         child: FutureBuilder<List>(
           future: tours,
@@ -64,7 +60,12 @@ class _tourManagerState extends State<TourManager> {
                           ),
                         ),
                         onTap: () {
-                          Navigator.pushNamed(context, '/TourInfo');
+                          Navigator.pushNamed(context, '/TourInfo', arguments: {
+                            'idTour': snapshot.data[index].idTour,
+                            'tourName': snapshot.data[index].tourName,
+                            'tourPrice': snapshot.data[index].tourPrice,
+                            'tourInfo': snapshot.data[index].tourInfo,
+                          });
                         },
                       ));
                 },

@@ -47,6 +47,12 @@ class PreAPI {
 
     final response =
         await http.put(_baseUrl + url, headers: headers, body: json);
+
+    print(json);
+    print(response.statusCode);
+    print(response.body);
+
+    return response.body;
   }
 
   Future<dynamic> delete(String url) async {

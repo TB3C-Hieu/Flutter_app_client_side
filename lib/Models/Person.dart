@@ -6,6 +6,8 @@ class Person {
   String phoneNumber;
   int accountId;
 
+  int Whata;
+
   Person({
     this.personId,
     this.name,
@@ -22,6 +24,14 @@ class Person {
     this.gender = json['gender'];
     this.phoneNumber = json['phoneNumber'];
     this.accountId = json['accountId'];
+  }
+
+  String toString() {
+    String _string;
+
+    _string =
+        '{ "personId": $personId, "name": "$name", "identificationCard": "$identificationCard", "gender": $gender, "phoneNumber": "$phoneNumber", "accountId": $accountId }';
+    return _string;
   }
 }
 

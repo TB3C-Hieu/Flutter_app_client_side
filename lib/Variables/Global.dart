@@ -1,4 +1,5 @@
 import 'package:appro/Models/Person.dart';
+import 'package:appro/Models/Tour.dart';
 import 'package:appro/Processors/PreApi/PreAPI.dart';
 
 class Global_Variables {
@@ -21,7 +22,10 @@ class Global_Variables {
   //#region variables
   Future<Person> currentUser;
 
+  List<Tour> registeringTour;
+
   int accountId;
+  int personId;
   //#endregion
 
   Future<Person> fetchCurrentPerson() async {

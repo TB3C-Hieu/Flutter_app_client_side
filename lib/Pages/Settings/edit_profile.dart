@@ -1,3 +1,5 @@
+import 'package:appro/Models/Person.dart';
+import 'package:appro/Processors/PreApi/PreAPI.dart';
 import 'package:appro/Variables/Global.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +11,29 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<Profile> {
+  final TextEditingController nameController = new TextEditingController();
+  final TextEditingController phoneController = new TextEditingController();
+  final TextEditingController idController = new TextEditingController();
+
+  PreAPI _helper = PreAPI();
+
+  Future<dynamic> update() async {
+    Person jack;
+
+    jack = await Global_Variables.getInstance().fetchCurrentPerson();
+
+    final person = Person(
+      personId: jack.personId,
+      name: nameController.text,
+      identificationCard: idController.text,
+      gender: false,
+      phoneNumber: phoneController.text,
+      accountId: Global_Variables.getInstance().accountId,
+    );
+
+    _helper.put('/person/' + jack.personId.toString(), person.toString());
+  }
+
   @override
   void initState() {
     widget.variables.currentUser = widget.variables.fetchCurrentPerson();
@@ -102,12 +127,15 @@ class _ProfilePageState extends State<Profile> {
                     if (snapshot.hasData) {
                       return Column(
                         children: <Widget>[
+                          buildTextField("Full Name", snapshot.data.name, false,
+                              nameController),
                           buildTextField(
-                              "Full Name", snapshot.data.name, false),
-                          buildTextField(
-                              "Phone Number", snapshot.data.phoneNumber, false),
-                          buildTextField(
-                              "ID", snapshot.data.identificationCard, false),
+                              "Phone Number",
+                              snapshot.data.phoneNumber,
+                              false,
+                              phoneController),
+                          buildTextField("ID", snapshot.data.identificationCard,
+                              false, idController),
                         ],
                       );
                     }
@@ -138,7 +166,9 @@ class _ProfilePageState extends State<Profile> {
                             color: Colors.black)),
                   ),
                   RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      update();
+                    },
                     color: Colors.green,
                     padding: EdgeInsets.symmetric(horizontal: 50),
                     elevation: 2,
@@ -161,11 +191,14 @@ class _ProfilePageState extends State<Profile> {
     );
   }
 
-  Widget buildTextField(
-      String labelText, String placeholder, bool isPasswordTextField) {
+  Widget buildTextField(String labelText, String placeholder,
+      bool isPasswordTextField, TextEditingController controller) {
+    controller.text = placeholder;
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 35.0),
       child: TextField(
+        controller: controller,
         obscureText: isPasswordTextField ? showPassword : false,
         decoration: InputDecoration(
             suffixIcon: isPasswordTextField

@@ -1,5 +1,5 @@
 # Quản lý Tour du lịch TourManager
-
+Ứng dụng giúp đăng kí các tour du lịch qua ứng dụng mobile tiện lợi nhanh và gọn nhẹ.
 
 
 ## Chức năng chính:

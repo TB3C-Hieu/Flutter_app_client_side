@@ -37,6 +37,10 @@ class PreAPI {
 
     int statusCode = response.statusCode;
 
+    print(json);
+    print(response.statusCode);
+    print(response.body);
+
     return response.body;
   }
 

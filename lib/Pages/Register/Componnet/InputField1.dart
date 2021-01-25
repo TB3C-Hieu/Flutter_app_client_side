@@ -23,7 +23,7 @@ class InputField1 extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border(bottom: BorderSide(color: Colors.grey[200]))),
           child: TextField(
-            controller: passwordcheckingController,
+            controller: usernamecheckingController,
             decoration: InputDecoration(
                 hintText: "Confirm your email",
                 hintStyle: TextStyle(color: Colors.grey),

@@ -14,6 +14,8 @@ class SubmitButton extends StatelessWidget {
         userPassword: regispasswordController.text);
 
     final response = await _helper.post('/account/register', cred.toString());
+
+    return int.parse(response.toString());
   }
 
   @override
@@ -29,7 +31,8 @@ class SubmitButton extends StatelessWidget {
           color: isButtonPressed ? Colors.grey : Colors.cyan[500],
           onPressed: () async {
             int status = await this.register();
-            if (status != null && status != 0) {
+            print(status.toString());
+            if (status != null && status != 0 && status != -1) {
               Global_Variables.getInstance().accountId = status;
               Navigator.pushNamed(context, '/HomeScreen');
             } else {

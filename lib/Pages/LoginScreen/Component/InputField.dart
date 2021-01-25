@@ -23,6 +23,7 @@ class InputField extends StatelessWidget {
           decoration: BoxDecoration(
               border: Border(bottom: BorderSide(color: Colors.grey[200]))),
           child: TextField(
+            obscureText: true,
             controller: passwordController,
             decoration: InputDecoration(
                 hintText: "Enter your password",

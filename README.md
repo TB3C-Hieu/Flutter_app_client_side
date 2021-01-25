@@ -16,8 +16,8 @@
 
 ## Thành Viên trong nhóm: 
 
-Đỗ Ngọc Cường - 18520542
-Nguyễn Trần Hoàng Hiếu - 18520054
-Thi Thanh Chương - 18520539
+- Đỗ Ngọc Cường - 18520542
+- Nguyễn Trần Hoàng Hiếu - 18520054
+- Thi Thanh Chương - 18520539
 
 

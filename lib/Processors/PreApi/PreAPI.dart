@@ -9,7 +9,7 @@ class PreAPI {
   static HttpClient apiClient;
 
   //final String _baseUrl = 'https://localhost:44308/';
-  final String _baseUrl = 'https://tour-manager-sever-side.conveyor.cloud/api';
+  final String _baseUrl = 'http://zoro-finder.herokuapp.com/api';
 
   Future<dynamic> get(String url) async {
     var responseJson;

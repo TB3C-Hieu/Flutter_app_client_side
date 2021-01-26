@@ -52,6 +52,7 @@ Cập nhật giá vé tour một cách nhanh chóng, cập nhật danh sách đo
 - Language: Dart 
 - FrameWork: Flutter SDK 1.22.6
 - WebApi: ASP.Net Core
+- Web Server Deployment: Heroku via Docker image
 - Database: PostgreSQL
 
 ## Tác giả: 

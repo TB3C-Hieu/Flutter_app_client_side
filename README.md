@@ -17,13 +17,36 @@ Cập nhật giá vé tour một cách nhanh chóng, cập nhật danh sách đo
 
 ### Login
 
+   <p align="center">
+   <img src="assets/images/projectimages/login-admin.jpg" height = "480" width="270"> <img src="assets/images/projectimages/login-noname.jpg" height = "480" width="270">
+   </p>
+   
 ### Register
+
+   <p align="center">
+   <img src="assets/images/projectimages/register.jpg" height = "480" width="270"> 
+   </p>
 
 ### Xem thông tin cá nhân
 
+   <p align="center">
+   <img src="assets/images/projectimages/account bar.jpg" height = "480" width="270">
+   <img src="assets/images/projectimages/info.jpg" height = "480" width="270"> 
+   </p>
+
 ### Xem thông tin khách sạn và các tour hiện tại
 
+   <p align="center">
+   <img src="assets/images/projectimages/homescreen 2.jpg" height = "480" width="270">
+   <img src="assets/images/projectimages/homescreen.jpg" height = "480" width="270"> 
+   </p>
+
 ### Danh sách các dịch vụ hiện có
+
+   <p align="center">
+   <img src="assets/images/projectimages/manager.jpg" height = "480" width="270">
+   <img src="assets/images/projectimages/tour manager.jpg" height = "480" width="270"> 
+   </p>
 
 ## Thư viện và Công nghệ:
 - Language: Dart 
